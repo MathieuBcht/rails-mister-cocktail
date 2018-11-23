@@ -24,7 +24,7 @@
       <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4" id="card-display">
           <%= link_to cocktail_path(cocktail) do %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6b1d319c9d079085df12025ac37e9e1e&auto=format&fit=crop&w=2850&q=80');">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path (cocktail.photo.file ? cocktail.photo : "sample"), height: 300, width: 400, crop: :fill %>')">
               <div class="card-category"></div>
                 <div class="card-description">
                   <h2><%= cocktail.name %></h2>
