@@ -1,0 +1,43 @@
+
+
+
+<section id="section05" class="demo">
+  <header>
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+    </video>
+    <div class="container h-100">
+      <div class="d-flex text-center h-100">
+        <div class="my-auto w-100 text-white">
+          <h1 class="display-3"><strong>The world's best refreshing drinks</strong></h1>
+          <h2>Make it your own</h2><i class="fas fa-cocktail"></i>
+          <a href="#card-display"><span></span>Scroll</a>
+        </div>
+      </div>
+    </div>
+  </header>
+</section>
+
+<div class="wrapper">
+  <div class="container">
+    <h1>List of Cocktails</h1>
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4" id="card-display">
+          <%= link_to cocktail_path(cocktail) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6b1d319c9d079085df12025ac37e9e1e&auto=format&fit=crop&w=2850&q=80');">
+              <div class="card-category"></div>
+                <div class="card-description">
+                  <h2><%= cocktail.name %></h2>
+                </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="link-add-home">
+      <%= link_to "Add a Cocktail", new_cocktail_path %>
+    </div>
+  </div>
+</div>
